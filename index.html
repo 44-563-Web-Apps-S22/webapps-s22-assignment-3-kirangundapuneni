@@ -2,7 +2,7 @@
   @Author: Kiran Kumar Gundapuneni
   @Date:   2022-02-03 15:52:32
   @Last Modified by:   Your name
-  @Last Modified time: 2022-02-09 15:57:02
+  @Last Modified time: 2022-02-09 16:17:43
 -->
 <!DOCTYPE html>
 <html>
@@ -84,5 +84,29 @@
         <td> 48.75 $ </td>
       </tr>
     </table>
+    <hr>
+    <h3>Geometry Elementary Polygons</h3>
+    <blockquote>
+      In geometry, a polygon is a plane figure that is described by a finite number of straight line segments connected to form a closed polygonal chain (or polygonal circuit). The bounded plane region, the bounding circuit, or the two together, may be called a polygon.
+    </blockquote>
+    <a href="https://codeforces.com/blog/entry/48868">Click here for more on Ploygons</a>
+    <pre>
+      int signed_area_parallelogram(point2d p1, point2d p2, point2d p3) {
+        return cross(p2 - p1, p3 - p2);
+    }
+    
+    double triangle_area(point2d p1, point2d p2, point2d p3) {
+        return abs(signed_area_parallelogram(p1, p2, p3)) / 2.0;
+    }
+    
+    bool clockwise(point2d p1, point2d p2, point2d p3) {
+        return signed_area_parallelogram(p1, p2, p3) < 0;
+    }
+    
+    bool counter_clockwise(point2d p1, point2d p2, point2d p3) {
+        return signed_area_parallelogram(p1, p2, p3) > 0;
+    }
+    </pre>
+    <a href="https://cp-algorithms.com/geometry/oriented-triangle-area.html">Source code on this</a>
 </body>
 </html>
